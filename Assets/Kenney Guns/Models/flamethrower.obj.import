@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://drdlrne3pcoxj"
+path="res://.godot/imported/flamethrower.obj-f94ddfef6ce5a0d02c844a0a77813fee.mesh"
+
+[deps]
+
+files=["res://.godot/imported/flamethrower.obj-f94ddfef6ce5a0d02c844a0a77813fee.mesh"]
+
+source_file="res://Assets/Kenney Guns/Models/flamethrower.obj"
+dest_files=["res://.godot/imported/flamethrower.obj-f94ddfef6ce5a0d02c844a0a77813fee.mesh", "res://.godot/imported/flamethrower.obj-f94ddfef6ce5a0d02c844a0a77813fee.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ckch52gmorog2"
+path="res://.godot/imported/ammo_uzi.obj-1a732e1428b85b2cbda84a1aa785a1aa.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ammo_uzi.obj-1a732e1428b85b2cbda84a1aa785a1aa.mesh"]
+
+source_file="res://Assets/Kenney Guns/Models/ammo_uzi.obj"
+dest_files=["res://.godot/imported/ammo_uzi.obj-1a732e1428b85b2cbda84a1aa785a1aa.mesh", "res://.godot/imported/ammo_uzi.obj-1a732e1428b85b2cbda84a1aa785a1aa.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

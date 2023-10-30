@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dmjjer4w1rkgg"
+path="res://.godot/imported/ammo_rocketModern.obj-f75e39a55f3ca8dc48bd8d70520ad26b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ammo_rocketModern.obj-f75e39a55f3ca8dc48bd8d70520ad26b.mesh"]
+
+source_file="res://Assets/Kenney Guns/Models/ammo_rocketModern.obj"
+dest_files=["res://.godot/imported/ammo_rocketModern.obj-f75e39a55f3ca8dc48bd8d70520ad26b.mesh", "res://.godot/imported/ammo_rocketModern.obj-f75e39a55f3ca8dc48bd8d70520ad26b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

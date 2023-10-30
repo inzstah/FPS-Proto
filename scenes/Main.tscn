@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://bl62vcp2ku86m"]
+
+[ext_resource type="Texture2D" uid="uid://b7w65k7vwpar8" path="res://Assets/hdris/industrial_sunset_puresky_4k.hdr" id="1_gsm48"]
+[ext_resource type="Texture2D" uid="uid://cewmgt4lw05p" path="res://Assets/textures/dev/texture_07.png" id="2_ctvwe"]
+[ext_resource type="PackedScene" uid="uid://d2ixc7cy3ke65" path="res://FPS_Character.tscn" id="3_s5tk2"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hjmck"]
+panorama = ExtResource("1_gsm48")
+
+[sub_resource type="Sky" id="Sky_s67ml"]
+sky_material = SubResource("PanoramaSkyMaterial_hjmck")
+
+[sub_resource type="Environment" id="Environment_xtygs"]
+background_mode = 2
+sky = SubResource("Sky_s67ml")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ujuln"]
+albedo_texture = ExtResource("2_ctvwe")
+uv1_triplanar = true
+
+[node name="World" type="Node3D"]
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = SubResource("Environment_xtygs")
+
+[node name="Stage" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(20, 1, 20)
+material = SubResource("StandardMaterial3D_ujuln")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.0512, -0.5, 0)
+use_collision = true
+size = Vector3(20, 1, 20)
+material = SubResource("StandardMaterial3D_ujuln")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.0373, 1.96665, 0)
+use_collision = true
+size = Vector3(20, 1, 20)
+material = SubResource("StandardMaterial3D_ujuln")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Stage"]
+transform = Transform3D(0.782445, -0.62272, 0, 0.62272, 0.782445, 0, 0, 0, 1, 13.0644, 2.20659, 0)
+use_collision = true
+size = Vector3(20, 1, 20)
+material = SubResource("StandardMaterial3D_ujuln")
+
+[node name="Player" parent="." instance=ExtResource("3_s5tk2")]

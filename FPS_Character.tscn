@@ -1,0 +1,116 @@
+[gd_scene load_steps=10 format=3 uid="uid://d2ixc7cy3ke65"]
+
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_xsppt"]
+[ext_resource type="PackedScene" uid="uid://c0y6m5xmwv4a7" path="res://Assets/Kenney Guns/blasterB.glb" id="2_c3jkf"]
+[ext_resource type="PackedScene" uid="uid://wwmns1i53mt8" path="res://Assets/Kenney Guns/blasterM.glb" id="3_4s8dg"]
+[ext_resource type="PackedScene" uid="uid://bvb0bfdqoq4bs" path="res://Assets/Kenney Guns/blasterI.glb" id="4_vtks0"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6vv83"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eb7p2"]
+height = 1.3
+
+[sub_resource type="Animation" id="Animation_8rvmc"]
+resource_name = "AutoRifleDraw"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blasterI:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.46126, -0.227897)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("blasterI:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_3h2ab"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blasterI:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.46126, -0.227897)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("blasterI:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cpv3h"]
+_data = {
+"AutoRifleDraw": SubResource("Animation_8rvmc"),
+"RESET": SubResource("Animation_3h2ab")
+}
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_xsppt")
+
+[node name="StandingCollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_6vv83")
+
+[node name="CrouchingCollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.688835, 0)
+shape = SubResource("CapsuleShape3D_eb7p2")
+disabled = true
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 2, 0)
+
+[node name="Neck" type="Node3D" parent="."]
+
+[node name="Head" type="Node3D" parent="Neck"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+
+[node name="Eyes" type="Node3D" parent="Neck/Head"]
+
+[node name="Camera3D" type="Camera3D" parent="Neck/Head/Eyes"]
+
+[node name="WeaponsManager" type="Node3D" parent="Neck/Head/Eyes/Camera3D"]
+
+[node name="FPSRig" type="Node3D" parent="Neck/Head/Eyes/Camera3D/WeaponsManager"]
+
+[node name="blasterB" parent="Neck/Head/Eyes/Camera3D/WeaponsManager/FPSRig" instance=ExtResource("2_c3jkf")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -1.46126, -0.227897)
+visible = false
+
+[node name="blasterM" parent="Neck/Head/Eyes/Camera3D/WeaponsManager/FPSRig" instance=ExtResource("3_4s8dg")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -1.46126, -0.227897)
+visible = false
+
+[node name="blasterI" parent="Neck/Head/Eyes/Camera3D/WeaponsManager/FPSRig" instance=ExtResource("4_vtks0")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -1.46126, -0.227897)
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Neck/Head/Eyes/Camera3D/WeaponsManager/FPSRig"]
+libraries = {
+"": SubResource("AnimationLibrary_cpv3h")
+}

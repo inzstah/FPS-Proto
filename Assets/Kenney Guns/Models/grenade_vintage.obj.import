@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://btch21e1m4pl7"
+path="res://.godot/imported/grenade_vintage.obj-d0eca8d562e2a727c96bfee9f05fe8da.mesh"
+
+[deps]
+
+files=["res://.godot/imported/grenade_vintage.obj-d0eca8d562e2a727c96bfee9f05fe8da.mesh"]
+
+source_file="res://Assets/Kenney Guns/Models/grenade_vintage.obj"
+dest_files=["res://.godot/imported/grenade_vintage.obj-d0eca8d562e2a727c96bfee9f05fe8da.mesh", "res://.godot/imported/grenade_vintage.obj-d0eca8d562e2a727c96bfee9f05fe8da.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

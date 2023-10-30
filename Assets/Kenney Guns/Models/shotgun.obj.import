@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d3ktotxem7y6e"
+path="res://.godot/imported/shotgun.obj-f5fd85035f6cb5a0fe1e231f02133d70.mesh"
+
+[deps]
+
+files=["res://.godot/imported/shotgun.obj-f5fd85035f6cb5a0fe1e231f02133d70.mesh"]
+
+source_file="res://Assets/Kenney Guns/Models/shotgun.obj"
+dest_files=["res://.godot/imported/shotgun.obj-f5fd85035f6cb5a0fe1e231f02133d70.mesh", "res://.godot/imported/shotgun.obj-f5fd85035f6cb5a0fe1e231f02133d70.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
